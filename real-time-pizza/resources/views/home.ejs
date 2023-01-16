@@ -1,0 +1,85 @@
+<section class="hero py-8 mb-12">
+  <div class="container mx-auto py-8 flex items-center justify-between">
+    <div class="w-1/2 animate-bounce">
+      <h6 class="text-xl"><em>Are You Hungry?</em></h6>
+      <h1 class="text-7xl font-bold">Don't Wait !!</h1>
+      <button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn">
+        Order Now
+      </button>
+    </div>
+    <div class="w-1/2 animate-pulse">
+      <img id="img3" src="/images/pizza1.jpg" alt="pizza " />
+    </div>
+  </div>
+</section>
+
+<section class="menu container mx-auto py-8">
+  <h1 class="text-xl font-bold mb-8 underline underline-offset-2"
+    >All Pizzas</h1
+  >
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-12 gap-x-16"
+  >
+    <% pizzas.forEach(function(pizza){%>
+
+    <div class="w-full md:w-64 add">
+      <img
+        class="img25 h-40 mb-4 mx-auto animate-pulse"
+        src="/images/<%= pizza.image%>"
+        alt="pizza"
+      />
+
+      <div class="text-center">
+        <h2 class="mb-4 text-lg"><%= pizza.name%></h2>
+        <span class="size py-1 px-4 rounded-full uppercase text-xs"
+          ><%= pizza.size%></span
+        >
+        <div class="flex items-center justify-around mt-6">
+          <span class="font-bold text-lg animate-pulse"
+            >Rs.<%= pizza.price%></span
+          >
+          <button
+            data-pizza="<%= JSON.stringify(pizza)%>"
+            class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold"
+          >
+            <span class="animate-bounce">+</span>
+            <span class="ml-4 animate-bounce">Add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <% })%>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="box-container">
+    <div class="box capitalize">
+      <h3>branch locations</h3>
+      <a href="#">haryana</a>
+      <a href="#">punjab</a>
+      <a href="#">rajesthan</a>
+    </div>
+
+    <div class="box capitalize">
+      <h3>quick links</h3>
+      <a href="/">menu</a>
+      <a href="/login">login</a>
+      <a href="/register">register</a>
+    </div>
+
+    <div class="box capitalize">
+      <h3>follow us</h3>
+      <a href="#">facebook</a>
+      <a href="#">instagram</a>
+      <a href="#">twitter</a>
+    </div>
+  </div>
+  <div>
+    <p class="bg-green-500 text-center text-black rounded-full text-xl">
+      &copy;2023 Nitish Yadav. All rights reserved.
+    </p>
+  </div>
+</section>
